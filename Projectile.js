@@ -1,14 +1,15 @@
-class Mango {
+class Projectile {
     constructor(x,y,radius) {
       var options = {
-            isStatic: true,
+            isStatic: false,
             restitution: 0,
             friction: 1,
+            density: 1.2,
       }
       this.body = Bodies.circle(x,y,radius,options);
       this.radius = radius;
 
-      this.image = loadImage("Sprites/mango.png");
+      this.image = loadImage("Sprites/stone.png");
       World.add(world, this.body);
     }
     display(){
