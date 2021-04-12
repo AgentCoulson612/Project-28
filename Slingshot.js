@@ -13,7 +13,6 @@ class Slingshot {
         this.constraint = Constraint.create(options);
         this.isReleased = false;
         World.add(world, this.constraint);
-        this.image = loadImage("sprites/slingshot.png");
     }
 
     release() {
@@ -22,16 +21,19 @@ class Slingshot {
 
     }
 
+    catch() {
+        this.isReleased = false;
+    }
+
     display() {
         imageMode(CENTER);
-        image(this.image, 200,180, 70, 200);
+        // image(this.image, 200,180, 70, 200);
         if (!this.isReleased) {
             var pointA = this.constraint.bodyA.position;
             var pointB = this.pointB;
            // var pointC = this.pointC;
             strokeWeight(6)
-            line(pointA.x-10, pointA.y, pointB.x, pointB.y);
-            line(pointA.x+20, pointA.y+10, pointB.x + 50, pointB.y-10)
+            line(pointA.x, pointA.y, pointB.x, pointB.y);
         }
     }
 }

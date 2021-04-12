@@ -1,16 +1,12 @@
 class Projectile {
     constructor(x,y,radius) {
       var options = {
-            isStatic: false,
-            restitution: 0,
-            friction: 1,
-            density: 1.2,
+            density: 0.01
       }
       this.body = Bodies.circle(x,y,radius,options);
       this.radius = radius;
+      this.image = loadImage("hexagon.png")
 
-      this.image = loadImage("Sprites/stone.png");
-      World.add(world, this.body);
     }
     display(){
         var angle = this.body.angle;
